@@ -1,28 +1,33 @@
 /*resert margin e padding das bordas do site no CSS */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 /* vh  = altura do viewport (delimita o corpo do site)*/
 body {
-  background-image: url('../img/creditos-macbook-pro-on-brown-wooden-table-3815750-2.jpg');
-  background-size: auto 100vw;
-  /*font-family: Arial; */
-  height: 100vh;
+  font-family: 'Balsamiq Sans', cursive;
+  /**height: 100vh;
+  width: 100vw;**/
 }
 /*se a tela tiver pelo menos 400px vai carregar esses estilos */
-@media (min-width: 400px) {
+@media (min-width: 600px) {
     body {
         font-size: 18px;
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1200px) {
     body {
-        font-size: 22px;
+        background-image: none;
+        font-size: 20px;
     }
+}
+
+.fundo {
+  background-image: url(../img/creditos-macbook-pro-on-brown-wooden-table-3815750-2.jpg);
+  background-size: contain;
 }
 
 header {
@@ -66,6 +71,8 @@ footer {
 .site-title {
   color: #FC0E49;
   text-align: center;
+  font-size: 4em;
+  font-family: 'Neucha', cursive;
 }
 
 .site-subtitle {
@@ -74,11 +81,56 @@ footer {
   font-weight: lighter;
   text-align: center;
   font-size: 2em;
+  font-family: 'Bebas Neue', cursive;
+}
+/** padding = Distancia do lado esquerdo da pagina, das Imagens abaixo**/
+.portfolio {
+  padding: 2em;
+  height: 100vh;
+}
+/**Titulo "Portifolio" das Imagens abaixo**/
+.portfolio h2 {
+  font-family: 'Bebas Neue', cursive;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+/**<div class "grid"> / gap = definir o espaçamento do grid**/
+.portfolio .grid {
+  display: grid;
+  gap: 2em ;
+}
+/**@media query = parte do grid portfolio para ajustar colunas**/
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+/**repeat = 3 colunas de 260px**/
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(4, 250px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 5em - 48px);
+    /*background-color: #FC0E49;*/
+  }
 }
 
+.portfolio figure {
+  text-align: center;
+}
 .img-portfolio {
   height: 180px;
-  width: 180px; 
+  width: 240px; 
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+@media (min-width: 1200px) {
+  .img-portfolio {
+    height: auto;
+    width: 100%;
+  }
 }
 
 
