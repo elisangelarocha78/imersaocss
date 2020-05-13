@@ -4,10 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* vh  = altura do viewport (delimita o corpo do site)*/
 body {
-  background-image: url('../img/fundo.jpg');
-  background-size: auto 100vh;
+  background-image: url('../img/creditos-macbook-pro-on-brown-wooden-table-3815750-2.jpg');
+  background-size: auto 100vw;
   /*font-family: Arial; */
   height: 100vh;
 }
@@ -31,6 +32,12 @@ header {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+footer {
+    margin-bottom: 30px; /** distancia do rodapé do texto final da pagina**/
+    align-items: center;
+}
+
 /* vw = largura do viewport (separa os menus)*/
 .menu {
   background-color:white;
@@ -50,19 +57,19 @@ header {
 }
 
 .menu a {
-    color: teal;
+    color: #FC0E49;
     display: block;
     padding: 10px;
     text-decoration: none;
 }
 
 .site-title {
-  color: whitesmoke;
+  color: #FC0E49;
   text-align: center;
 }
 
 .site-subtitle {
-  color: silver;
+  color: #272727;
   font-style: italic;
   font-weight: lighter;
   text-align: center;
@@ -71,5 +78,10 @@ header {
 
 .img-portfolio {
   height: 180px;
-  width: 180px;
+  width: 180px; 
 }
+
+
+
+
+
