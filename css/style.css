@@ -28,6 +28,7 @@ body {
 .fundo {
   background-image: url(../img/creditos-macbook-pro-on-brown-wooden-table-3815750-2.jpg);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 header {
