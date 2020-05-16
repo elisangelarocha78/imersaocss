@@ -1,4 +1,4 @@
-/*resert margin e padding das bordas do site no CSS */
+/* (*)reserta a margin e padding das bordas do site no CSS */
 * {
     margin: 0px;
     padding: 0px;
@@ -7,40 +7,49 @@
 
 /* vh  = altura do viewport (delimita o corpo do site)*/
 body {
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Balsamiq Sans', cursive;
-  /**height: 100vh;
-  width: 100vw;**/
+  font-size: 1em;
+  /*width: 100vw;*/
+  height: 100vh;
 }
+
 /*se a tela tiver pelo menos 400px vai carregar esses estilos */
+@media (min-width: 400px) {
+    body {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 14px;
+    }
+}
+
 @media (min-width: 600px) {
     body {
+        font-family: 'Balsamiq Sans', cursive;
         font-size: 18px;
     }
 }
 
 @media (min-width: 1200px) {
     body {
-        background-image: none;
+        font-family: 'Balsamiq Sans', cursive;
         font-size: 20px;
     }
-}
-
-.fundo {
-  background-image: url(../img/creditos-macbook-pro-on-brown-wooden-table-3815750-2.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 header {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    /*flex-wrap: wrap;*/
 }
 
+
+/** distancia do rodapé do texto final da pagina**/
 footer {
-    margin-bottom: 30px; /** distancia do rodapé do texto final da pagina**/
+    margin-bottom: 30px; 
     align-items: center;
 }
 
@@ -48,8 +57,9 @@ footer {
 .menu {
   background-color:white;
   position: fixed;
-  top: 0;
+  top: 1px;
   width: 100vw;
+  z-index: 1;
   
 }
 
@@ -61,14 +71,49 @@ footer {
 .menu li {
   list-style:none;
 }
-
+/* transitions = titulo dos menus da pagina com animação */
 .menu a {
-    color: #FC0E49;
     display: block;
-    padding: 10px;
-    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;   
 }
 
+/*ao passar mouse no menus da pagina o fundo muda de cor*/
+.menu a:active,
+.menu a:hover {
+  background-color: #bfbfbf;
+  color: whitesmoke;
+  
+}
+/*cor do titulo dos menus pagina*/
+a {
+  color: #FC0E49;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/*<div class="titulo">*/
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation: linear 2s animacaoTitulo forwards;
+}
+/*@keyframes vc cria o nome da animação no titulo do site 
+(h1 e h2) aqui foi criado o animacaoTitulo*/
+@keyframes animacaoTitulo {
+  from {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* titulo dos menus da pagina */
 .site-title {
   color: #FC0E49;
   text-align: center;
@@ -84,21 +129,46 @@ footer {
   font-size: 2em;
   font-family: 'Bebas Neue', cursive;
 }
+
+/*<div class="grid">*/
 /** padding = Distancia do lado esquerdo da pagina, das Imagens abaixo**/
+.sobre,
+.contato,
 .portfolio {
-  padding: 2em;
-  height: 100vh;
+  padding: 1em;
+  min-height: 100vh;
+  margin-bottom: 4em;
+  text-align: center;
+  /*background-color: #bfbfbf;*/
+  margin-left: auto;
+  margin-right: auto;
 }
+
+@media (min-width: 1200px) {
+.sobre,
+.contato,
+.portfolio {
+max-width: 1200px;
+}
+
 /**Titulo "Portifolio" das Imagens abaixo**/
+.sobre h2,
+.contato h2,
 .portfolio h2 {
   font-family: 'Bebas Neue', cursive;
   margin-bottom: 1em;
   font-size: 2em;
 }
+.sobre p {
+  text-indent: 2em;
+  margin-bottom: 2em;
+  text-align: justify;
+}
 /**<div class "grid"> / gap = definir o espaçamento do grid**/
 .portfolio .grid {
   display: grid;
   gap: 2em ;
+  margin-top: 4em;
 }
 /**@media query = parte do grid portfolio para ajustar colunas**/
 @media (min-width: 560px) {
@@ -117,22 +187,48 @@ footer {
   }
 }
 
+/*<div class="grid">*/
 .portfolio figure {
   text-align: center;
 }
+/*Duração dos efeitos visuais nas imagens do portifolio com transitions*/
 .img-portfolio {
   height: 180px;
   width: 240px; 
   object-fit: cover;
   border-radius: 15px;
+  transition: 500ms;
 }
-
+/*Efeitos visuais nas imagens do portifolio com hover e transform*/
+/*Unidade de medida (deg) graus para rotacionar com (rotate)*/
+.img-portfolio:hover {
+  transform: scale(1.2) rotate(-2deg);
+}
 @media (min-width: 1200px) {
   .img-portfolio {
     height: auto;
     width: 100%;
   }
 }
+
+/*<div class="grid icons">*/
+/*Icones */
+.contato .icons{
+  text-align: center;
+}
+/* Efeitos visuais nos Icones redes sociais final da pagina*/
+.contato a {
+  color: whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+/* Efeitos visuais nos Icones redes sociais final da pagina*/
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(255,255,255,1);
+}
+
 
 
 
