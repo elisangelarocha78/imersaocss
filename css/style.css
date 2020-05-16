@@ -12,7 +12,6 @@ body {
   background-repeat: no-repeat;
   font-family: 'Balsamiq Sans', cursive;
   font-size: 1em;
-  /*width: 100vw;*/
   height: 100vh;
 }
 
@@ -43,21 +42,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*flex-wrap: wrap;*/
-}
-
-
-/** distancia do rodapé do texto final da pagina**/
-footer {
-    margin-bottom: 30px; 
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* vw = largura do viewport (separa os menus)*/
 .menu {
-  background-color:white;
+  background-color: whitesmoke;
   position: fixed;
-  top: 1px;
+  top: 0px;
   width: 100vw;
   z-index: 1;
   
@@ -74,20 +66,20 @@ footer {
 /* transitions = titulo dos menus da pagina com animação */
 .menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 30px;
     transition: background-color 1s, color 1s;   
 }
 
 /*ao passar mouse no menus da pagina o fundo muda de cor*/
 .menu a:active,
 .menu a:hover {
-  background-color: #bfbfbf;
-  color: whitesmoke;
+  background-color: #d9d9d9;
+  color:#7d9d98;
   
 }
 /*cor do titulo dos menus pagina*/
 a {
-  color: #FC0E49;
+  color: #7d9d98;
   text-decoration: none;
 }
 
@@ -113,16 +105,17 @@ a:hover {
   }
 }
 
-/* titulo dos menus da pagina */
+/* titulo da pagina */
 .site-title {
-  color: #FC0E49;
+  color: #88a5a0;
   text-align: center;
   font-size: 4em;
   font-family: 'Neucha', cursive;
 }
 
+/*Sub-titulo da pagina */
 .site-subtitle {
-  color: #272727;
+  color: #858585;
   font-style: italic;
   font-weight: lighter;
   text-align: center;
@@ -130,107 +123,64 @@ a:hover {
   font-family: 'Bebas Neue', cursive;
 }
 
-/*<div class="grid">*/
-/** padding = Distancia do lado esquerdo da pagina, das Imagens abaixo**/
-.sobre,
-.contato,
-.portfolio {
-  padding: 1em;
-  min-height: 100vh;
-  margin-bottom: 4em;
-  text-align: center;
-  /*background-color: #bfbfbf;*/
-  margin-left: auto;
-  margin-right: auto;
+/* Inicio Bootstrap*/
+/*<section class="sobre">*/
+.margin{
+    padding-bottom: 50px;
+    padding-top: 10px;
 }
 
-@media (min-width: 1200px) {
-.sobre,
-.contato,
-.portfolio {
-max-width: 1200px;
+.img-sobre {
+  height: 180px;
+  width: 240px; 
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 500ms
 }
-
-/**Titulo "Portifolio" das Imagens abaixo**/
-.sobre h2,
-.contato h2,
-.portfolio h2 {
-  font-family: 'Bebas Neue', cursive;
-  margin-bottom: 1em;
-  font-size: 2em;
+/*Efeitos visuais nas imagens do (Sobre) com hover e transform*/
+/*Unidade de medida (deg) graus para rotacionar com (rotate)*/
+.img-sobre:hover {
+  transform: scale(1.2) rotate(-2deg);
 }
 .sobre p {
   text-indent: 2em;
   margin-bottom: 2em;
   text-align: justify;
 }
-/**<div class "grid"> / gap = definir o espaçamento do grid**/
-.portfolio .grid {
-  display: grid;
-  gap: 2em ;
-  margin-top: 4em;
-}
-/**@media query = parte do grid portfolio para ajustar colunas**/
-@media (min-width: 560px) {
-  .portfolio .grid {
-    grid-template-columns: repeat(2, 240px);
-  }
-}
-/**repeat = 3 colunas de 260px**/
-@media (min-width: 880px) {
-  .portfolio .grid {
-    grid-template-columns: repeat(4, 250px);
-    align-content: center;
-    justify-content: center;
-    height: calc(100vh - 5em - 48px);
-    /*background-color: #FC0E49;*/
-  }
+
+/*<section id="parceiros">*/
+.parceiros{
+    background-color: #7d9d98
 }
 
-/*<div class="grid">*/
-.portfolio figure {
-  text-align: center;
+/*<footer class="container-fluid text-center  bg-footer margin">*/
+.bg-footer{
+    background-color: #89a6a1;
+    color:#282828;
+    margin-bottom: 30px; 
+    align-items: center;
 }
-/*Duração dos efeitos visuais nas imagens do portifolio com transitions*/
-.img-portfolio {
-  height: 180px;
-  width: 240px; 
-  object-fit: cover;
-  border-radius: 15px;
-  transition: 500ms;
-}
-/*Efeitos visuais nas imagens do portifolio com hover e transform*/
-/*Unidade de medida (deg) graus para rotacionar com (rotate)*/
-.img-portfolio:hover {
-  transform: scale(1.2) rotate(-2deg);
-}
-@media (min-width: 1200px) {
-  .img-portfolio {
-    height: auto;
-    width: 100%;
-  }
-}
-
 /*<div class="grid icons">*/
 /*Icones */
-.contato .icons{
+.grid-icons {
   text-align: center;
 }
 /* Efeitos visuais nos Icones redes sociais final da pagina*/
-.contato a {
+.grid-icons a {
   color: whitesmoke;
-  font-size: 4em;
+  font-size: 2em;
   transition: text-shadow 1s;
 }
 /* Efeitos visuais nos Icones redes sociais final da pagina*/
-.contato a:active,
-.contato a:hover {
+.grid-icons a:active,
+.grid-icons a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px rgba(255,255,255,1);
 }
-
-
-
-
-
+/* Efeitos visuais no link Alura final da pagina*/
+.footer a {
+  color: whitesmoke;
+  font-size: 1em;
+  transition: text-shadow 1s;
+}
 
