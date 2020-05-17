@@ -1,7 +1,7 @@
 /* (*)reserta a margin e padding das bordas do site no CSS */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,6 +13,7 @@ body {
   font-family: 'Balsamiq Sans', cursive;
   font-size: 1em;
   height: 100vh;
+  background-color: #eeeeee;
 }
 
 /*se a tela tiver pelo menos 400px vai carregar esses estilos */
@@ -42,41 +43,28 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
 }
 
 /* vw = largura do viewport (separa os menus)*/
 .menu {
   background-color: whitesmoke;
   position: fixed;
-  top: 0px;
   width: 100vw;
+  top: 0px;
   z-index: 1;
   
 }
-
+/*<nav class="menu">*/
 .menu ul {
   display: flex;
   justify-content: space-around;
 }
 
 .menu li {
-  list-style:none;
-}
-/* transitions = titulo dos menus da pagina com animação */
-.menu a {
-    display: block;
-    padding: 10px 30px;
-    transition: background-color 1s, color 1s;   
+  list-style: none;
 }
 
-/*ao passar mouse no menus da pagina o fundo muda de cor*/
-.menu a:active,
-.menu a:hover {
-  background-color: #d9d9d9;
-  color:#7d9d98;
-  
-}
 /*cor do titulo dos menus pagina*/
 a {
   color: #7d9d98;
@@ -86,6 +74,21 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* transitions = titulo dos menus da pagina com animação */
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 1s, color 1s;   
+}
+
+/*ao passar mouse no menus da pagina o fundo muda de cor*/
+.menu a:active,
+.menu a:hover {
+  background-color: #d9d9d9;
+  color:#7d9d98;
+}
+
 /*<div class="titulo">*/
 .titulo {
   transform: scale(0.2) translateY(50vh);
@@ -123,10 +126,10 @@ a:hover {
   font-family: 'Bebas Neue', cursive;
 }
 
+/*<h3 class="margin">Parceiros</h3>*/
 /* Inicio Bootstrap*/
-/*<section class="sobre">*/
 .margin{
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     padding-top: 10px;
 }
 
@@ -137,11 +140,13 @@ a:hover {
   border-radius: 15px;
   transition: 500ms
 }
+
 /*Efeitos visuais nas imagens do (Sobre) com hover e transform*/
 /*Unidade de medida (deg) graus para rotacionar com (rotate)*/
 .img-sobre:hover {
   transform: scale(1.2) rotate(-2deg);
 }
+
 .sobre p {
   text-indent: 2em;
   margin-bottom: 2em;
@@ -149,34 +154,43 @@ a:hover {
 }
 
 /*<section id="parceiros">*/
-.parceiros{
-    background-color: #7d9d98
+.parceiros {
+  color: #424343;
+  background-color: #7d9d98
+}
+
+/*.container {
+  background-color: #eeeeee;
 }
 
 /*<footer class="container-fluid text-center  bg-footer margin">*/
-.bg-footer{
+.bg-footer {
     background-color: #89a6a1;
     color:#282828;
     margin-bottom: 30px; 
     align-items: center;
 }
+
 /*<div class="grid icons">*/
 /*Icones */
 .grid-icons {
   text-align: center;
 }
+
 /* Efeitos visuais nos Icones redes sociais final da pagina*/
 .grid-icons a {
   color: whitesmoke;
   font-size: 2em;
   transition: text-shadow 1s;
 }
+
 /* Efeitos visuais nos Icones redes sociais final da pagina*/
 .grid-icons a:active,
 .grid-icons a:hover {
   text-decoration: none;
   text-shadow: 0px 0px 10px rgba(255,255,255,1);
 }
+
 /* Efeitos visuais no link Alura final da pagina*/
 .footer a {
   color: whitesmoke;
